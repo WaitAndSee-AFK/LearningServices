@@ -33,5 +33,8 @@ class MainActivity : AppCompatActivity() {
                 this,
                 MyForegroundService.newIntent(this))
         }
+        binding.intentService.setOnClickListener {
+            startService(MyIntentService.newIntent(this))
+        }
     }
 }
