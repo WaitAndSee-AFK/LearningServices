@@ -33,7 +33,7 @@ class MyIntentService : IntentService(NAME_SERVICE) {
         log("onHandleIntent")
         for (i in 0 until 5) {
             Thread.sleep(100)
-            Log.d("Timer:", "$i")
+            log("Timer: $i")
         }
     }
 
@@ -76,7 +76,7 @@ class MyIntentService : IntentService(NAME_SERVICE) {
     }
 
     private fun log(message: String) {
-        Log.d("SERVICE_TAG", "MyForegroundService message: $message")
+        Log.d("SERVICE_TAG", "MyIntentService message: $message")
     }
 
     companion object {
