@@ -34,14 +34,17 @@ class MainActivity : AppCompatActivity() {
             stopService(MyForegroundService.newIntent(this))
             startService(MyService.newIntent(this))
         }
+
         binding.foregroundService.setOnClickListener {
             ContextCompat.startForegroundService(
                 this,
                 MyForegroundService.newIntent(this))
         }
+
         binding.intentService.setOnClickListener {
             startService(MyIntentService.newIntent(this))
         }
+
         binding.jobService.setOnClickListener {
             val componentName = ComponentName(this, MyJobService::class.java)
 
@@ -58,6 +61,10 @@ class MainActivity : AppCompatActivity() {
             } else {
                 startService(MyIntentService2.newIntent(this, page++))
             }
+        }
+
+        binding.jobIntentService.setOnClickListener {
+            MyJobIntentService.enqueue(this, page++)
         }
     }
 }
