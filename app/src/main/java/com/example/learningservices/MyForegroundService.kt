@@ -34,7 +34,7 @@ class MyForegroundService : Service() {
         scope.launch {
             for (i in 0 until 5) {
                 delay(100)
-                Log.d("Timer:", "$i")
+                log("Timer: $i")
             }
             // Функция для остановки сервиса изнутри
             stopSelf()

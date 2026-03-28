@@ -25,7 +25,7 @@ class MyService : Service() {
         scope.launch {
             for (i in 0 until 100) {
                 delay(100)
-                Log.d("Timer:", "$i")
+                log("Timer: $i")
             }
         }
         return START_STICKY
